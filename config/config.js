@@ -7,7 +7,7 @@ const config = {
     "mongodb://0.0.0.0:27017/mernproject" ||
     process.env.MONGO_HOST ||
     "mongodb://" +
-      (process.env.IP || "localhost") +
+      (process.env.IP || "localhost") + 
       ":" +
       (process.env.MONGO_PORT || "27017") +
       "/mernproject",
