@@ -9,6 +9,6 @@ services:
       - key: NODE_VERSION
         value: 22.1.0
       - key: MONGODB_URI
-        value: mongodb+srv://adeline404:Z94Hy8mMnQMoB8zA@cluster0.2wxztzk.mongodb.net/
+        sync: false
     autoDeploy: true
     branch: main
