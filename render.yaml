@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: comp229-group1-project
+    env: static
+    staticPublishPath: build
+    buildCommand: npm i && cd client && npm i --force && npm run build
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 22.1.0
+      - key: MONGODB_URI
+        value: mongodb+srv://adeline404:Z94Hy8mMnQMoB8zA@cluster0.2wxztzk.mongodb.net/
+    autoDeploy: true
+    branch: main
