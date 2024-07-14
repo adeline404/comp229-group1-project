@@ -52,7 +52,7 @@ const classes = useStyles()
 return (
 <Card className={classes.card}>
    
-  <Typography variant="h6" className={classes.title}>Home Page</Typography>
+  <Typography variant="h6" className={classes.title}>Home Page - Mern Skeleron</Typography>
 
 
 <CardMedia className={classes.media}
@@ -60,7 +60,6 @@ image={unicornbikeImg} title="Unicorn Bicycle"/>
 <CardContent>
 <Typography variant="body2" component="p"> 
 Welcome to the MERN Skeleton home page.
-Hello guys.
 </Typography> 
 </CardContent>
 </Card> 
