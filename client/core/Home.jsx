@@ -61,6 +61,9 @@ image={unicornbikeImg} title="Unicorn Bicycle"/>
 <Typography variant="body2" component="p"> 
 Welcome to the MERN Skeleton home page.
 </Typography> 
+<Typography variant="body2" component="h1"> 
+Welcome!!
+</Typography> 
 </CardContent>
 </Card> 
 )
