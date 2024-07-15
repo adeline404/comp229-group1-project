@@ -1,0 +1,117 @@
+
+
+
+
+/* ----------------------Section-----------Blocks--------------------- */
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sec1{
+    background-image: url(../imgs/clouds2.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.block{
+    box-shadow: 7px -4px 5px -5px rgba(9, 9, 9, 0.51);
+    padding: 5px;
+    margin: 10px;
+    transition: all 0.4s;
+    background-color: rgba(255, 255, 255, 0.715);
+}
+
+.block:hover{
+    position: relative;
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.block img{
+    width: 400px;
+    height: 400px;
+}
+.block h1{
+    margin-bottom: 0;
+}
+.block h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(159, 8, 8);
+
+}
+
+.infoBlock{
+    margin-left: 30px;
+}
+
+.infoBlock a{
+    text-decoration: none;
+}
+
+
+.button{
+    display: flex;
+    background-color: rgb(0, 133, 129);
+    color: white;
+    width: 130px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    
+}
+.button:hover{
+    background-color: rgba(8, 182, 176, 0.837);
+    color: white; 
+    box-shadow: -5px 0px 8px 2px rgba(9, 9, 9, 0.4);
+}
+
+
+/* ----------------------Section-----------Blocks--------------------- */
+
+
+
+
+
+/* ----------------------Section-----------Covid--------------------- */
+
+.covid {
+    background-size:cover;
+}
+.infoCovid {
+    width: 100%;
+    margin-top: 15px;
+    background-color: rgba(207, 200, 200, 0.751);
+}
+
+.infoCovid h1{
+    font-size: 40px;
+    margin-left: 40px;
+    color: rgb(159, 8, 8) ;
+}
+.infoCovid p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.marginT{
+    margin-top: 0;
+}
+
+.imgCovid img{
+    margin-left: 20px;
+    height: 48px;
+}
+.imgCovid{
+    display: flex;
+    align-items: center;
+}
+
+/* ----------------------Section-----------Covid--------------------- */
+
+
+

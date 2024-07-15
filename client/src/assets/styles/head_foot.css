@@ -1,0 +1,245 @@
+html,body,html {
+    width: 100%;
+margin: 0 auto;
+font-family: "Playfair Display", sans-serif;
+}
+
+
+/* -------------------Header---------------------- */
+
+header{
+  width: 100%;
+  margin-top: 20px;
+}
+.wrapper{
+    margin: 0 auto;
+    max-width: 1200px;
+    
+}
+.firstLine {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.menu{
+    display: none;
+    cursor: pointer;
+}
+
+.leftMenu{
+    box-sizing: border-box;
+    padding: 0 10px;
+    top: 80px;
+    bottom: 0;
+    left: -200px;
+    z-index: 4;
+    position: fixed;
+    width: 200px;
+    background-color: rgba(21, 104, 104, 0.832);
+}
+
+
+
+
+.leftMenu h2{
+    border: 5px solid white;
+    font-weight: 900;
+}
+
+
+.logo {
+    
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.logo img {
+    height: 40px;
+    padding-right:20px ;
+}
+.textLogo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: rgb(159, 8, 8);
+}
+.textLine{
+    font-family: 'Raleway', sans-serif;
+    color: rgb(190, 9, 9);
+
+}
+.infoHeader {
+    display: flex;
+}
+.search {
+}
+.search img{
+    height: 40px;
+}
+.language {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+}
+.language span{
+    text-transform: uppercase;
+    font-size: 25px;
+    padding-left: 20px;
+
+}
+.language img{
+    height: 40px;
+}
+.account {
+}
+.account img{
+    height: 40px;
+}
+
+.secondLine {
+    margin: 15px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(207, 200, 200, 0.751);
+}
+.wrapper2{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 30px;
+}
+.secondLine span{
+    padding: 15px 0;
+}
+.secondLine a{
+    color: black;
+}
+.textSL {
+    font-weight: bold;
+    font-size: 18px;
+}
+.textSL2 {
+    font-size: 18px;
+}
+
+/* -------------------Header---------------------- */
+
+
+
+
+/* ----------------------BlockFooter-----------textFooter--------------------- */
+
+.blockFooter {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.textFooter p{
+    font-size: 17px;
+}
+
+.textFooter a{
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
+.textFooter a:hover{
+    text-decoration: underline;
+    color:rgb(159, 8, 8) ;
+}
+
+/* ----------------------BlockFooter-----------textFooter--------------------- */
+
+
+
+
+/* ----------------------Contacts--------------------------- */
+
+.Contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.copyright {
+}
+
+.support a{
+    text-decoration: none;
+    color: rgb(48, 17, 17);
+}
+
+
+.support a:after {
+	content: "";
+    display: block;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; 
+    background-color: black; 
+    transition: 0.5s; 
+}
+
+.support a:hover:after {
+    width: 40%;
+    display: block;
+    left: 0;
+    bottom: -3px;
+    height: 2px; 
+    background-color: red;
+    transition: 0.5s;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.support p{
+    padding-left: 30px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+.textDecor{
+    color:rgb(159, 8, 8) ;
+}
+
+.photos{
+    text-align: center;
+}
+.photos img{
+    margin-right: 15px;
+}
+.bottomLine{
+    border-bottom: 1px solid black;
+}
+
+/* ----------------------Contacts--------------------------- */
+
+
+.ButtonUp img{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;    
+}

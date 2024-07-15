@@ -1,17 +1,28 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/styles";
-import MainRouter from "../MainRouter";
-import theme from "../theme";
+// import React from "react";
+import Home from "./pages/Home";
+import Header from "./components/Header";
 
-const App = () => {
-  return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <MainRouter />
-      </ThemeProvider>
-    </Router>
-  );
-};
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+    Navigate
+} from "react-router-dom";
+import Footer from "./components/Footer";
 
-export default App;
+const App = () =>{
+    return(
+        <Router>
+            <div>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home/>} />
+
+                </Routes>
+                <Footer/>
+            </div>
+        </Router>
+    )
+}
+
+export default App
