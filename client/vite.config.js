@@ -46,6 +46,11 @@ export default defineConfig({
     outDir: '../server/dist/app', // Output directory for the build
     rollupOptions: {
       input: './src/main.jsx', // Input path for rollup
+      output: {
+        assetFileNames: "assets/[name].[ext]",
+        chunkFileNames: "assets/[name].[ext]",
+        entryFileNames: "assets/[name].js",
+      }
     },
   },
 });

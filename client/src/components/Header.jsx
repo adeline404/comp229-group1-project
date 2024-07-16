@@ -44,7 +44,7 @@ const Header = () => {
 
                             <div className="language">
                                 <Link><img src={language} alt="language" /></Link>
-                                <span>ca (CAD, $)</span>
+                                <span>ca (CADXYZ, $)</span>
                             </div>
 
                             <div className="account">
