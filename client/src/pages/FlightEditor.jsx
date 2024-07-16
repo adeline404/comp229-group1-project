@@ -29,11 +29,10 @@ const FlightEditor = () => {
       };
 
       return (
-        <div>
+        <div className="flightEditor">
           <header>
-            <h1>Airline Website</h1>
-            <img src={flightLogo} alt="Airline Logo" height="40px"/>
-            <button>Book a Flight</button>
+            <h1>Airline Website <img src={flightLogo} alt="Airline Logo"/></h1>
+            {/* <button disabled>Book a Flight</button> */}
           </header>
           <main>
             <h2>Available Flights</h2>
@@ -71,6 +70,8 @@ const FlightEditor = () => {
                 To:
                 <input type="text" name="to" value={newFlight.to} onChange={handleInputChange} />
               </label>
+              <br></br>
+              <br></br>
               <label>
                 Date:
                 <input type="date" name="date" value={newFlight.date} onChange={handleInputChange} />
@@ -79,6 +80,8 @@ const FlightEditor = () => {
                 Price:
                 <input type="number" name="price" value={newFlight.price} onChange={handleInputChange} />
               </label>
+              <br></br>
+              <br></br>
               <button type="button" onClick={handleAddFlight}>
                 Add Flight
               </button>
