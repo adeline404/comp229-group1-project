@@ -12,6 +12,9 @@ const Footer = () => {
     return (
         <div>
             <footer>
+                <br></br>
+                <br></br>
+                <br></br>
                 <div className="wrapper">
                     <div className="blockFooter">
                         <div className="textFooter">

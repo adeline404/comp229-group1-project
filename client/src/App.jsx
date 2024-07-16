@@ -9,18 +9,17 @@ import {
     Navigate
 } from "react-router-dom";
 import Footer from "./components/Footer";
+import FlightEditor from "./pages/FlightEditor";
 
 const App = () =>{
     return(
         <Router>
-            <div>
-                <Header />
-                <Routes>
-                    <Route path="/" element={<Home/>} />
-
-                </Routes>
-                <Footer/>
-            </div>
+            <Header />
+            <Routes>
+                <Route exact path="/" element={<Home/>} />
+                <Route path="/FlightEditor" element={<FlightEditor/>} />
+            </Routes>
+            <Footer/>
         </Router>
     )
 }

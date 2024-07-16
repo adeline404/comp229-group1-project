@@ -97,6 +97,12 @@ header{
 .account img{
     height: 40px;
 }
+.flight {
+}
+.flight img{
+    height: 40px;
+    margin-left: 30px;
+}
 
 .secondLine {
     margin: 15px 0;
