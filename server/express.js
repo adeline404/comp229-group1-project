@@ -32,54 +32,54 @@
 //   }
 // });
 // export default app;
-// import express from "express";
-// import path from "path";
-// import cookieParser from "cookie-parser";
-// import compress from "compression";
-// import cors from "cors";
-// import helmet from "helmet";
-// import userRoutes from "./routes/user.routes.js";
-// import authRoutes from "./routes/auth.routes.js";
-
-// const app = express();
-// const __dirname = path.resolve();
-
-// // Middleware
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-// app.use(cookieParser());
-// app.use(compress());
-// app.use(helmet());
-// app.use(cors());
-
-// // Serve static files from the 'client' directory
-// app.use(express.static(path.join(__dirname, 'server/dist/app')));
-
-// // Routes
-// app.use("/", userRoutes);
-// app.use("/", authRoutes);
-
-// // Error handling middleware
-// app.use((err, req, res, next) => {
-//   if (err.name === "UnauthorizedError") {
-//     res.status(401).json({ error: err.name + ": " + err.message });
-//   } else if (err) {
-//     res.status(400).json({ error: err.name + ": " + err.message });
-//     console.log(err);
-//   }
-// });
-
-// export default app;
-
-
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
+import express from "express";
+import path from "path";
+import cookieParser from "cookie-parser";
+import compress from "compression";
+import cors from "cors";
+import helmet from "helmet";
+import userRoutes from "./routes/user.routes.js";
+import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
+const __dirname = path.resolve();
 
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(compress());
+app.use(helmet());
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve static files from the 'client' directory
+app.use(express.static(path.join(__dirname, 'server/dist/app')));
+
+// Routes
+app.use("/", userRoutes);
+app.use("/", authRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).json({ error: err.name + ": " + err.message });
+  } else if (err) {
+    res.status(400).json({ error: err.name + ": " + err.message });
+    console.log(err);
+  }
+});
 
 export default app;
+
+
+// import express from 'express';
+// import cors from 'cors';
+// import bodyParser from 'body-parser';
+
+// const app = express();
+
+// app.use(cors());
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+
+// export default app;
