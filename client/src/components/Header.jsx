@@ -13,7 +13,7 @@ import News from "./News";
 const Header = () => {
     return (
         <div>
-            <header>
+            <div>
                 <div className='leftMenu'>
                     <ul>
                         <Link to="/"><li>Home</li></Link>
@@ -61,7 +61,7 @@ const Header = () => {
                 </div>
 
                 <News />
-            </header>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 // import React from "react";
 import Home from "./pages/Home";
 import Header from "./components/Header";
+import MainRouter from "../MainRouter";
 
 import {
     BrowserRouter as Router,
@@ -14,12 +15,7 @@ import FlightEditor from "./pages/FlightEditor";
 const App = () =>{
     return(
         <Router>
-            <Header />
-            <Routes>
-                <Route exact path="/" element={<Home/>} />
-                <Route path="/FlightEditor" element={<FlightEditor/>} />
-            </Routes>
-            <Footer/>
+            <MainRouter />
         </Router>
     )
 }

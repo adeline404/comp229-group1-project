@@ -11,7 +11,7 @@ import buttonUp from "../assets/img_head_foot/up_upload_icon.png"
 const Footer = () => {
     return (
         <div>
-            <footer>
+            <div>
                 <br></br>
                 <br></br>
                 <br></br>
@@ -61,7 +61,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
 
             <div className="ButtonUp">
                 <a href="#Up">

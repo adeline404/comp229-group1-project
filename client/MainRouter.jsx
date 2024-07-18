@@ -1,6 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./core/Home";
+//import Home from "./core/Home";
+import Home from "./src/pages/Home";
+import Header from "./src/components/Header";
+import Footer from "./src/components/Footer";
 import Users from "./user/Users.jsx";
 import Signup from "./user/Signup.jsx";
 import Signin from "./lib/Signin.jsx";
@@ -14,7 +17,7 @@ function MainRouter() {
   return (
     <div>
       <Menu />
-
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<Users />} />
@@ -31,6 +34,7 @@ function MainRouter() {
         <Route path="/user/:userId" element={<Profile />} />
         <Route path="/addItem" element={<AddItem />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
