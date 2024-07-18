@@ -57,6 +57,7 @@ export default function Signin(props) {
     console.log(user)
     signin(user).then((data) => {
       if (data.error) {
+        console.log(data.error);
         setValues({ ...values, error: data.error })
       } else {
         auth.authenticate(data, () => {
