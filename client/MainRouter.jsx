@@ -16,7 +16,6 @@ import AddItem from "./item/AddItem.jsx";
 function MainRouter() {
   return (
     <div>
-      <Menu />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
