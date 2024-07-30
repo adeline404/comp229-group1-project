@@ -62,9 +62,13 @@ const FlightEditor = () => {
   }, [editingFlight]);
 
   const handleDeleteFlight = useCallback(async (id) => {
+    console.log("Delete button clicked");
+    console.log("Flight ID to delete:", id);
+
     try {
       await axios.delete(`/api/flights/${id}`);
       setFlights((prev) => prev.filter((flight) => flight._id !== id));
+      console.log("Flight deleted successfully");
     } catch (error) {
       console.error("Error deleting flight:", error);
     }
