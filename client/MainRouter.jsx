@@ -8,6 +8,7 @@ import Users from "./user/Users.jsx";
 import Signup from "./user/Signup.jsx";
 import Signin from "./lib/Signin.jsx";
 import Profile from "./user/Profile.jsx";
+import FlightEditor from "./src/pages/FlightEditor.jsx";
 import PrivateRoute from "./lib/PrivateRoute.jsx";
 import EditProfile from "./user/EditProfile.jsx";
 import Menu from "./core/Menu";
@@ -32,6 +33,7 @@ function MainRouter() {
         />
         <Route path="/user/:userId" element={<Profile />} />
         <Route path="/addItem" element={<AddItem />} />
+        <Route path="/flights" element={<FlightEditor />} />
       </Routes>
       <Footer />
     </div>

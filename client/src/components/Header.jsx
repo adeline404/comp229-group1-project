@@ -12,6 +12,9 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from "../../lib/auth-helper";
 
 
+const isActive = (location, path) => {
+  return location.pathname === path ? { color: '#ff4081' } : { color: '#ffffff' };
+};
 
 const Header = () => {
     const navigate = useNavigate();
@@ -48,18 +51,22 @@ const Header = () => {
                   </button>
                 </span>
               ) : (
-                <Link to="/signin">
-                  <img src={account} alt="account" />
-                </Link>
+                <span>
+                  <Link to="/signin">
+                    <img src={account} alt="Sign In" />
+                  </Link>
+                </span>
               )}
             </div>
 
             <div className="registration">
-                <Link to="/signup"><img src={reg} alt="registration" /></Link>
+                <Link to="/signup">
+                  <img src={reg} alt="registration" />
+                </Link>
             </div>
 
             <div className="flight">
-              <Link to="FlightEditor"><img src={flight} alt="flight" /></Link>
+              <Link to="/flights"><img src={flight} alt="flight" /></Link>
             </div>
           </div>
         </div>
