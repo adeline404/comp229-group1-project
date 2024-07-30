@@ -1,24 +1,82 @@
-import React from "react";
+// import React from "react";
+// import "../assets/styles/flighteditor.css";
+// import flightLogo from "../assets/img_head_foot/flight_icon.png";
+
+
+// const FlightEditor = () => {
+//     const [flights, setFlights] = React.useState([
+//         { id: 1, number: 'AA123', from: 'New York', to: 'Los Angeles', date: '2024-08-01', price: 300 },
+//         { id: 2, number: 'UA456', from: 'Chicago', to: 'Miami', date: '2024-08-15', price: 200 },
+//         { id: 3, number: 'DL789', from: 'Seattle', to: 'Denver', date: '2024-09-01', price: 150 },
+//     ]);
+
+//     const [newFlight, setNewFlight] = React.useState({
+//         number: '',
+//         from: '',
+//         to: '',
+//         date: '',
+//         price: 0,
+//     });
+
+//     const [editingFlight, setEditingFlight] = React.useState(null);
+
+//     const handleInputChange = (e) => {
+//         const { name, value } = e.target;
+//         if (editingFlight) {
+//             setEditingFlight({ ...editingFlight, [name]: value });
+//         } else {
+//             setNewFlight({ ...newFlight, [name]: value });
+//         }
+//     };
+
+//     const handleAddFlight = () => {
+//         setFlights([...flights, { id: flights.length + 1, ...newFlight }]);
+//         setNewFlight({ number: '', from: '', to: '', date: '', price: 0 });
+//     };
+
+//     const handleUpdateFlight = () => {
+//         setFlights(flights.map((flight) => (flight.id === editingFlight.id ? editingFlight : flight)));
+//         setEditingFlight(null);
+//         setNewFlight({ number: '', from: '', to: '', date: '', price: 0 });
+//     };
+
+//     const handleDeleteFlight = (id) => {
+//         setFlights(flights.filter((flight) => flight.id !== id));
+//     };
+
+//     const handleEditFlight = (flight) => {
+//         setEditingFlight(flight);
+//         setNewFlight(flight); // Set newFlight with the values of editingFlight to display them in the form
+//     };
+
+import React, { useState, useEffect } from "react";
 import "../assets/styles/flighteditor.css";
 import flightLogo from "../assets/img_head_foot/flight_icon.png";
-
+import axios from "axios";
 
 const FlightEditor = () => {
-    const [flights, setFlights] = React.useState([
-        { id: 1, number: 'AA123', from: 'New York', to: 'Los Angeles', date: '2024-08-01', price: 300 },
-        { id: 2, number: 'UA456', from: 'Chicago', to: 'Miami', date: '2024-08-15', price: 200 },
-        { id: 3, number: 'DL789', from: 'Seattle', to: 'Denver', date: '2024-09-01', price: 150 },
-    ]);
-
-    const [newFlight, setNewFlight] = React.useState({
-        number: '',
-        from: '',
-        to: '',
-        date: '',
+    const [flights, setFlights] = useState([]);
+    const [newFlight, setNewFlight] = useState({
+        number: "",
+        from: "",
+        to: "",
+        date: "",
         price: 0,
     });
+    
+    const [editingFlight, setEditingFlight] = useState(null);
 
-    const [editingFlight, setEditingFlight] = React.useState(null);
+    useEffect(() => {
+        const fetchFlights = async () => {
+            try {
+                const response = await axios.get("/api/flights");
+                setFlights(response.data);
+            } catch (error) {
+                console.error("Error fetching flights:", error);
+            }
+        };
+        fetchFlights();
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -29,26 +87,45 @@ const FlightEditor = () => {
         }
     };
 
-    const handleAddFlight = () => {
-        setFlights([...flights, { id: flights.length + 1, ...newFlight }]);
-        setNewFlight({ number: '', from: '', to: '', date: '', price: 0 });
+    const handleAddFlight = async () => {
+        try {
+            const response = await axios.post("/api/flights", newFlight);
+            setFlights([...flights, response.data]);
+            setNewFlight({ number: "", from: "", to: "", date: "", price: 0 });
+        } catch (error) {
+            console.error("Error adding flight:", error);
+        }
     };
 
-    const handleUpdateFlight = () => {
-        setFlights(flights.map((flight) => (flight.id === editingFlight.id ? editingFlight : flight)));
-        setEditingFlight(null);
-        setNewFlight({ number: '', from: '', to: '', date: '', price: 0 });
+    const handleUpdateFlight = async () => {
+        try {
+            await axios.put(`/api/flights/${editingFlight._id}`, editingFlight);
+            setFlights(
+                flights.map((flight) =>
+                    flight._id === editingFlight._id ? editingFlight : flight
+                )
+            );
+            setEditingFlight(null);
+            setNewFlight({ number: "", from: "", to: "", date: "", price: 0 });
+        } catch (error) {
+            console.error("Error updating flight:", error);
+        }
     };
 
-    const handleDeleteFlight = (id) => {
-        setFlights(flights.filter((flight) => flight.id !== id));
+    const handleDeleteFlight = async (id) => {
+        try {
+            await axios.delete(`/api/flights/${id}`);
+            setFlights(flights.filter((flight) => flight._id !== id));
+        } catch (error) {
+            console.error("Error deleting flight:", error);
+        }
     };
 
     const handleEditFlight = (flight) => {
         setEditingFlight(flight);
-        setNewFlight(flight); // Set newFlight with the values of editingFlight to display them in the form
+        setNewFlight({ ...flight });
     };
-
+    
     return (
         <div className="flightEditor">
             <header>

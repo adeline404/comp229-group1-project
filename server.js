@@ -61,6 +61,7 @@ import mongoose from 'mongoose';
 import path from 'path';
 import express from 'express';
 import userRoutes from './server/routes/user.routes.js';
+import flightRoutes from './server/routes/flight.routes.js';
 
 const __dirname = path.resolve();
 
@@ -79,6 +80,7 @@ mongoose.connect(config.mongoUri, {
 
 app.use('/api', userRoutes);
 app.use(express.static(path.join(__dirname, 'client')));
+app.use('/api', flightRoutes);
 
 // Route handler for root URL
 app.get('/', (req, res) => {
